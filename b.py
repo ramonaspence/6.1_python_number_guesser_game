@@ -10,38 +10,47 @@ while chances > 0:
     theguess = random.randint(0, 100)
     print(theguess)
     if theguess == theanswer:
+        print('the guess is correct')
         theresult = input('Did I guess it? It\s a yes or no question.')
-        if theresult == 'no' or 'No':
+        if theresult.lower() == 'no':
             chances -= 1
-            chances = str(chances)
-            print('Alright, I\'ve got ' + chances + ' more chances then!')
-            chances = int(chances)
+            print('Alright, I\'ve got ' + str(chances) + ' more chances then!')
             continue
-        elif theresult == 'yes' or 'Yes':
+        else:
             print('Aha! I knew I would get it right!')
             break
-    elif theguess <= theanswer:
+    elif theguess < theanswer:
+        print('the guess is too low')
         theresult = input('Tell me I got it right! ...yes/no?')
-        if input == 'no' or 'No':
+        if theresult.lower() == 'no':
+            print('no')
             chances -= 1
-            chances = str(chances)
-            print('Oh cmon! I got ' + chances + ' chances left!')
-            chances = int(chances)
+            print('Oh cmon! I got ' + str(chances) + ' chances left!')
             continue
-        elif input == 'yes' or 'Yes':
+        elif theresult == 'yes':
+            print('yes')
             print('Ooooo yeaaa!')
-            input('next level?')
-    elif theguess >= theanswer:
+            break
+    elif theguess > theanswer:
+        print('the guess is too high')
         theresult = input('Alright! Did I get it right? yes/no?')
-        if input == 'no' or 'No':
+        if theresult.lower() == 'no':
             chances -= 1
-            chances = str(chances)
-            print('Fine! I still have ' + chances + 'tries left.')
-            chances = int(chances)
+            print('Fine! I still have ' + str(chances) + 'tries left.')
             continue
-        elif input == 'yes' or 'Yes':
+        elif theresult == 'yes' or 'Yes':
                 print('Aha! Now that\'s a gotcha!')
                 input('Lets go one more round?')
+                break
+        else:
+            print('problem')
+
+# while chances > 0:
+#     theguess = random.randint(0, 100)
+#     print(theguess)
+#     if theguess == theanswer:
+#         if theguess !== theanswer:
+
 
 if chances == 0:
     print("Yeah yeah, ham, spam and eggs. Out of chances once again")

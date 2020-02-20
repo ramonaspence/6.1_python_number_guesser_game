@@ -1,7 +1,6 @@
 import random
 
-theanswer = input('Okay, okay. This time you pick a number\n and I\'ll guess it! Of course I get ten chances too!\n It\'s got to be between 0 and 100, so no messin\' around!')
-theanswer = int(theanswer)
+theanswer = int(input('Okay, okay. This time you pick a number\n and I\'ll guess it! Of course I get ten chances too!\n It\'s got to be between 0 and 100, so no messin\' around!'))
 theguess = random.randint(0, 100)
 chances = 10
 
@@ -39,5 +38,5 @@ while chances > 0:
                 print('Aha! Now that\'s a gotcha!')
                 input('Lets go one more round?')
                 break
-if chances == 0:
-    print("Yeah yeah, ham, spam and eggs. Out of chances once again")
+        if chances == 0:
+            print("Yeah yeah, ham, spam and eggs. Out of chances once again")
